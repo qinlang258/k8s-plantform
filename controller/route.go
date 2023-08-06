@@ -83,6 +83,12 @@ func (r *router) InitApiRouter(router *gin.Engine) {
 		GET("/api/k8s/ingress/detail", Ingress.GetIngressDetail).
 		DELETE("/api/k8s/ingress/del", Ingress.DeleteIngress).
 		PUT("/api/k8s/ingress/update", Ingress.UpdateIngress).
-		POST("/api/k8s/ingress/create", Ingress.CreateIngress)
+		POST("/api/k8s/ingress/create", Ingress.CreateIngress).
+
+		// workflows
+		GET("/api/k8s/workflows", Workflow.GetList).
+		GET("/api/k8s/workflow/detail", Workflow.GetById).
+		POST("/api/k8s/workflow/create", Workflow.Create).
+		DELETE("/api/k8s/workflow/del", Workflow.DelById)
 
 }
